@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Candice [Surname] | Instructional Designer & eLearning Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #143A5E;
+      --teal: #0E8C8C;
+      --white: #FFFFFF;
+      --light-grey: #F8F9FA;
+      --grey: #6C757D;
+    }
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* Header */
+    header {
+      background-color: var(--white);
+      padding: 20px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    /* Hero */
+    .hero {
+      background-color: var(--light-grey);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 32px;
+    }
+    .btn {
+      display: inline-block;
+      background-color: var(--teal);
+      color: var(--white);
+      padding: 12px 28px;
+      margin: 10px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-outline {
+      border: 2px solid var(--teal);
+      background: transparent;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(14,140,140,0.2);
+    }
+
+    /* About */
+    .about {
+      padding: 60px 0;
+      background-color: var(--white);
+    }
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+    .about-text {
+      flex: 1;
+    }
+    .about-img {
+      flex: 1;
+      text-align: center;
+    }
+    .about-img img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    /* Services */
+    .services {
+      padding: 60px 0;
+      background-color: var(--light-grey);
+    }
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: var(--navy);
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--white);
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .service-card h3 {
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    /* Featured Projects */
+    .projects {
+      padding: 60px 0;
+      background-color: var(--white);
+    }
+    .project {
+      background: var(--light-grey);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .project h3 {
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+    .project-tools {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 12px 0;
+    }
+    .tool {
+      background: var(--navy);
+      color: var(--white);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    /* Before & After */
+    .before-after {
+      padding: 60px 0;
+      background-color: var(--navy);
+      color: var(--white);
+    }
+    .before-after .section-title {
+      color: var(--white);
+    }
+    .ba-grid {
+      display: grid;
+      grid-template-columns: 1fr 2rem 1fr;
+      gap: 20px;
+      text-align: center;
+    }
+    .ba-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .ba-box {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    /* Process */
+    .process {
+      padding: 60px 0;
+      background-color: var(--light-grey);
+    }
+    .process-steps {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .step {
+      text-align: center;
+      flex: 1;
+      min-width: 100px;
+    }
+    .step-number {
+      display: block;
+      width: 40px;
+      height: 40px;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 50%;
+      line-height: 40px;
+      margin: 0 auto 10px;
+      font-weight: bold;
+    }
+
+    /* Software */
+    .software {
+      padding: 60px 0;
+      background-color: var(--white);
+      text-align: center;
+    }
+    .software-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .software-item {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 60px 0;
+      background-color: var(--light-grey);
+      text-align: center;
+    }
+    .testimonial {
+      max-width: 800px;
+      margin: 0 auto;
+      font-style: italic;
+      font-size: 18px;
+    }
+
+    /* Contact */
+    .contact {
+      padding: 60px 0;
+      background-color: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+    .contact-links {
+      margin: 20px 0;
+    }
+    .contact-links a {
+      color: var(--teal);
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    .cv-download {
+      margin-top: 20px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+      }
+      .ba-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .ba-arrow {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Candice [Surname]</h1>
+      <p>Instructional Designer | eLearning Developer | Learning Content Specialist</p>
+      <p>I transform classroom training, SOPs, learner guides, and technical documentation into engaging digital learning experiences that improve performance and learner engagement.</p>
+      <a href="#projects" class="btn">View Portfolio</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>Hi, I'm Candice.</h2>
+          <p>I'm an Instructional Designer and Learning Content Specialist with experience designing engaging digital learning solutions for corporate environments.</p>
+          <p>My work includes transforming traditional classroom training into interactive eLearning using Articulate Storyline, PowerPoint, and multimedia — while maintaining learning objectives and improving learner engagement.</p>
+          <p>Alongside content development, I've managed User Acceptance Testing projects, giving me an understanding of both the learner experience and project delivery.</p>
+          <p>I enjoy simplifying complex information into learning that people actually enjoy using.</p>
+        </div>
+        <div class="about-img">
+          <!-- Replace with actual image -->
+          <img src="https://via.placeholder.com/400x500" alt="Candice [Surname] - Instructional Designer" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">What I Do</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Instructional Design</h3>
+          <ul>
+            <li>Learning needs analysis</li>
+            <li>Learning journeys</li>
+            <li>Storyboarding</li>
+            <li>Curriculum design</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3>eLearning Development</h3>
+          <ul>
+            <li>Articulate Storyline</li>
+            <li>Interactive scenarios</li>
+            <li>Knowledge checks</li>
+            <li>Software simulations</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3>Learning Content</h3>
+          <ul>
+            <li>Learner Guides</li>
+            <li>Facilitator Guides</li>
+            <li>Job Aids</li>
+            <li>Quick Reference Guides</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3>Multimedia</h3>
+          <ul>
+            <li>Training Videos</li>
+            <li>Adobe Rush</li>
+            <li>Voice-over integration</li>
+            <li>Animated learning</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3>UAT Project Management</h3>
+          <ul>
+            <li>Planning</li>
+            <li>Stakeholder communication</li>
+            <li>Testing coordination</li>
+            <li>Issue tracking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+
+      <div class="project">
+        <h3>Storyline Project: Employee Electronic Filing System</h3>
+        <p><strong>The Challenge:</strong> Employees were struggling to understand the new electronic filing process.</p>
+        <p><strong>My Solution:</strong> I transformed the written process into an interactive Storyline course including guided simulations, knowledge checks, and learner feedback.</p>
+        <div class="project-tools">
+          <span class="tool">Storyline</span>
+          <span class="tool">PowerPoint</span>
+          <span class="tool">Instructional Design</span>
+        </div>
+        <p><strong>Learning Outcomes:</strong> Improved compliance and reduced helpdesk queries by 60% post-launch. (Include screenshot mockup or placeholder here.)</p>
+      </div>
+
+      <div class="project">
+        <h3>PowerPoint Project: Self-Led Learning Guide</h3>
+        <p>Existing classroom training redesigned into an engaging self-paced learning experience.</p>
+        <p>Included: Visual learning, icons, activities, and knowledge reinforcement.</p>
+        <div class="project-tools">
+          <span class="tool">PowerPoint</span>
+          <span class="tool">Canva</span>
+          <span class="tool">Learning Guides</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>Video Project: Process Demonstration</h3>
+        <p>Created instructional videos using Adobe Rush to demonstrate workplace processes.</p>
+        <p>Included: Voice-over, captions, and step-by-step demonstrations.</p>
+        <div class="project-tools">
+          <span class="tool">Adobe Rush</span>
+          <span class="tool">Video Learning</span>
+          <span class="tool">Multimedia</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <h3>UAT Project: Software Implementation Testing</h3>
+        <p>Managed User Acceptance Testing activities for software implementation projects by coordinating testers, tracking defects, and ensuring business readiness before deployment.</p>
+        <div class="project-tools">
+          <span class="tool">Project Management</span>
+          <span class="tool">Stakeholder Communication</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before & After -->
+  <section class="before-after">
+    <div class="container">
+      <h2 class="section-title">Before & After</h2>
+      <p>Here’s the value I bring — turning static content into engaging learning.</p>
+      <div class="ba-grid">
+        <div class="ba-box">
+          <h3>Before</h3>
+          <p>• 80-page Word document</p>
+          <p>• Text-heavy PowerPoint</p>
+          <p>• SOP with no visuals</p>
+        </div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-box">
+          <h3>After</h3>
+          <p>• Interactive Storyline course</p>
+          <p>• Video tutorial</p>
+          <p>• Self-paced learning guide + knowledge assessment</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Design Process -->
+  <section class="process">
+    <div class="container">
+      <h2 class="section-title">My Design Process</h2>
+      <div class="process-steps">
+        <div class="step">
+          <span class="step-number">1</span>
+          <p>Discover</p>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <p>Analyse existing content</p>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <p>Design</p>
+        </div>
+        <div class="step">
+          <span class="step-number">4</span>
+          <p>Develop</p>
+        </div>
+        <div class="step">
+          <span class="step-number">5</span>
+          <p>Review</p>
+        </div>
+        <div class="step">
+          <span class="step-number">6</span>
+          <p>Deliver</p>
+        </div>
+        <div class="step">
+          <span class="step-number">7</span>
+          <p>Evaluate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Software -->
+  <section class="software">
+    <div class="container">
+      <h2 class="section-title">Tools I Use</h2>
+      <div class="software-list">
+        <span class="software-item">Articulate Storyline</span>
+        <span class="software-item">PowerPoint</span>
+        <span class="software-item">Adobe Rush</span>
+        <span class="software-item">Microsoft 365</span>
+        <span class="software-item">Canva</span>
+        <span class="software-item">LMS Platforms</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Clients Say</h2>
+      <p class="testimonial">
+        “Candice transformed our outdated training into a dynamic eLearning experience. Her attention to learner engagement and technical precision made all the difference.”<br>
+        — <strong>Client Name, LRMG</strong>
+      </p>
+      <!-- Add more as you go -->
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Let's Work Together</h2>
+      <p>I'm available for:</p>
+      <p>Freelance Projects | Contract Work | Remote Opportunities | Corporate Learning Projects</p>
+      <div class="contact-links">
+        <a href="https://linkedin.com/in/candice-surname" target="_blank">LinkedIn</a>
+        <a href="mailto:candice@domain.co.za">Email</a>
+      </div>
+      <a href="Candice-Surname-CV.pdf" class="btn cv-download" download>Download CV</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Candice [Surname]. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
